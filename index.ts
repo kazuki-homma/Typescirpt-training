@@ -6,4 +6,7 @@ const person: {
     age: 13
 }
 
-console.log(`${person.name}は${person.age}才です`);
+const fruits: string[] = ['りんご', 'バナナ', 'ぶどう'];
+
+
+console.log(`${person.name}は${person.age}才です。彼は${fruits[0]}が大好物です`);
