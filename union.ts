@@ -1,2 +1,5 @@
-let unionType: number | string = 10;
-let unionArray: (number | string)[] = ['高足', 13];
+let clothSize: 'small' | 'medium' | 'large' = 'large';
+const cloth = {
+    color: 'White',
+    Size: clothSize
+}
