@@ -1,6 +1,2 @@
-var people = [
-    "隆",
-    13,
-    true,
-];
-console.log(people[0]);
+"use strict";
+let hello = "hello";
