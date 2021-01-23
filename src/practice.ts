@@ -1,10 +1,10 @@
-class Person {
-    constructor(private name: string) {
-
+class Dog {
+    constructor(private name: string, private breed: string) {
     }
-    greeting(this: Person) {
-        console.log(`今日は私の名前は${this.name}です。`)
+    introduction(this: Dog) {
+        console.log(`うちの${this.name}です。よろしくお願いします。犬種は${this.breed}です。`);
     }
 }
 
-const takashi = new Person('隆', '山本');
+const pochi = new Dog('ぽち', '柴犬');
+pochi.introduction();
