@@ -1,11 +1,13 @@
 "use strict";
-class Person {
-    constructor(name) {
+class Dog {
+    constructor(name, breed) {
         this.name = name;
+        this.breed = breed;
     }
-    greeting() {
-        console.log(`今日は私の名前は${this.name}です。`);
+    introduction() {
+        console.log(`うちの${this.name}です。よろしくお願いします。犬種は${this.breed}です。`);
     }
 }
-const takashi = new Person('隆', '山本');
+const pochi = new Dog('ぽち', '柴犬');
+pochi.introduction();
 //# sourceMappingURL=practice.js.map
