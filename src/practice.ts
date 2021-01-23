@@ -1,12 +1,10 @@
-class Job {
-    constructor(private name: string, private ganle: string) {
+class Person {
+    constructor(private name: string) {
 
     }
-
-    greeting(this: Job) {
-        console.log(`私は${this.name}です。ジャンルは${this.ganle}です。`)
+    greeting(this: Person) {
+        console.log(`今日は私の名前は${this.name}です。`)
     }
 }
 
-const job = new Job('消防士', '公務員');
-job.greeting();
+const takashi = new Person('隆', '山本');

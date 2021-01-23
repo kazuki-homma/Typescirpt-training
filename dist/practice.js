@@ -1,13 +1,11 @@
 "use strict";
-class Job {
-    constructor(name, ganle) {
+class Person {
+    constructor(name) {
         this.name = name;
-        this.ganle = ganle;
     }
     greeting() {
-        console.log(`私は${this.name}です。ジャンルは${this.ganle}です。`);
+        console.log(`今日は私の名前は${this.name}です。`);
     }
 }
-const job = new Job('消防士', '公務員');
-job.greeting();
+const takashi = new Person('隆', '山本');
 //# sourceMappingURL=practice.js.map
