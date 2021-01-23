@@ -3,7 +3,6 @@ class Person {
     constructor(public readonly name: string, protected age: number) {
         this.id = 31;
         this.name = 'hehh';
-
     }
 
     incrementAge() {
