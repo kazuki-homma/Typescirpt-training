@@ -1,23 +1,23 @@
 class Dog {
-    name: string;
-    nickName: string;
-
-    constructor(initName: string, initNick: string) {
-        this.name = initName;
-        this.nickName = initNick;
+    constructor(public readonly name: string, protected age: number) {
     }
 
-    greeting(this: { name: string}) {
-        console.log(`私の名前は${this.name}です。`);
+    incrementAge() {
+        this.age += 1;
+    }
+
+    greeting(this: Dog) {
+        console.log(`私の名前は${this.name}です。${this.age}才です。`);
     }
 }
 
-const pochi = new Dog('pochi', 'poc');
-pochi.greeting();
+class PetDog extends Dog{
+    constructor(public name: string, protected age: number) {
+        super(name, age);
+    }
 
-// thisの挙動
-const anotherPochi = {
-    name: 'anotherPochi',
-    anotherGreeting: pochi.greeting,
+    greeting() {
+        console.log(`私の名前は${this.name}です。このうちにきてから${this.age}年になります。`);
+    }
 }
-anotherPochi.anotherGreeting();// anotherPochi
+
