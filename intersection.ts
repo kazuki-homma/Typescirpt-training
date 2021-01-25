@@ -22,3 +22,10 @@ const quill: EngineerBlogger = {
 type NumberBoolean = number | boolean;
 type StringNumber = string | number;
 type Mix = NumberBoolean & StringNumber;
+
+function toUpperCase(x: string | number) {
+    if (typeof x === 'string') {
+      x.toUpperCase();
+    }
+    return '';
+}
