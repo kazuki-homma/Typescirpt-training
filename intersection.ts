@@ -78,4 +78,6 @@ havePet(new Dog());
 // const input = document.getElementById('input') as HTMLInputElement;
 // input.value = 'initial input value';
 
-(document.getElementById('input') as HTMLInputElement).value = 'initial input value';
+// (document.getElementById('input') as HTMLInputElement).value = 'initial input value';
+
+const input = <HTMLInputElement>document.getElementById('input')!;
