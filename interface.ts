@@ -23,8 +23,11 @@ interface Human extends Namable{
 }
 
 class Developer implements Human{
-    constructor(public name: string, public age: number, public experience: number) {
-
+    hairStyle?: string;
+    constructor(public name: string, public age: number, public experience: number, initHair?: string) {
+        if (initHair) {
+            this.hairStyle = initHair;
+        }
     }
     greeting(message?: string) {
         if (message) {
