@@ -81,3 +81,14 @@ havePet(new Dog());
 // (document.getElementById('input') as HTMLInputElement).value = 'initial input value';
 
 const input = <HTMLInputElement>document.getElementById('input')!;
+
+
+interface Designer {
+    name: string;
+    [index: string]: string;
+}
+const designer: Designer = {
+    name:'QUill',
+    role: 'afa',
+    fafa: 'fafa',
+}
