@@ -1,7 +1,21 @@
-type Namable = {
-    name: string;
+// type addFunc = (num1: number, num2:number) => number;
+interface addFunc {
+    (num1: number, num2: number): number;
+}
+let addFunc: addFunc;
+addFunc = (n1: number, n2: number) => {
+    return n1 + n2;
 }
 
+type Namable = {
+    name: string;
+    nickName?: string;
+}
+
+const namable: Namable = {
+    name: 'Quill',
+    nickName: 'QUila',
+}
 
 interface Human extends Namable{
     age: number;
@@ -12,7 +26,10 @@ class Developer implements Human{
     constructor(public name: string, public age: number, public experience: number) {
 
     }
-    greeting(message: string) {
+    greeting(message?: string) {
+        if (message) {
+            console.log(message);
+        }
         console.log('Hello');
     }
 }
