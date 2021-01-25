@@ -42,12 +42,14 @@ function describeNomadWorkerProfile(nomadWorker: NomadWorker) {
 }
 
 class Dog {
+    kind: 'dog' = 'dog';
     speak() {
         console.log('bow-wow');
     }
 }
 
 class Bird {
+    kind: 'bird' = 'bird';
     speak() {
         console.log('tweet-tweet');
     }
