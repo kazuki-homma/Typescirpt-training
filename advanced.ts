@@ -50,3 +50,5 @@ interface tmpFunc {
     (x: number): number;
 }
 const upperHello: tmpFunc = function (x: string | number) { return 0 };// オーバーロードの全てのパターンに対応した関数でなくてはいけない
+
+let milk = 'milk' as const;
