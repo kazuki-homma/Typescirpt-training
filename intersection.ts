@@ -23,12 +23,16 @@ type NumberBoolean = number | boolean;
 type StringNumber = string | number;
 type Mix = NumberBoolean & StringNumber;
 
-function toUpperCase(x: string | number) {
+function tooUpperCase(x: string): string;
+function tooUpperCase(x: number): number;
+
+function tooUpperCase(x: string | number): string | number{
     if (typeof x === 'string') {
       x.toUpperCase();
     }
     return '';
 }
+const upperHello = tooUpperCase('hello');
 
 type NomadWorker = Engineer | Blogger;
 function describeNomadWorkerProfile(nomadWorker: NomadWorker) {
@@ -78,4 +82,17 @@ havePet(new Dog());
 // const input = document.getElementById('input') as HTMLInputElement;
 // input.value = 'initial input value';
 
-(document.getElementById('input') as HTMLInputElement).value = 'initial input value';
+// (document.getElementById('input') as HTMLInputElement).value = 'initial input value';
+
+const input = <HTMLInputElement>document.getElementById('input')!;
+
+
+interface Designer {
+    name: string;
+    [index: string]: string;
+}
+const designer: Designer = {
+    name:'QUill',
+    role: 'afa',
+    fafa: 'fafa',
+}
