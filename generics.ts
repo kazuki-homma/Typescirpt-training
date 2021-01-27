@@ -54,3 +54,10 @@ fetchData.then(data => {
 
 const vegetables: Array<string> = ['Tomato', 'Broccoly', 'Asparagas'];
 
+interface ResponseData<T extends { message: string} = any> {
+    data: T,
+    status: number;
+}
+
+let tmp: ResponseData;
+
