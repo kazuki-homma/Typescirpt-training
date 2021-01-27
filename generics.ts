@@ -25,7 +25,7 @@ stringLightDatabase.add('Grape');
 stringLightDatabase.remove('Apple');
 console.log(stringLightDatabase.get());
 
-interface TmpDatabace<T> {
+interface TmpDatabace<T> {// type
     id: number;
     data: number[];
 }
@@ -34,4 +34,23 @@ const tmpDatabace: TmpDatabace<number> = {
     id: 3,
     data: [32, 433, 443 ],
 }
+
+interface Todo {
+    title: string;
+    text: string;
+}
+
+type Todoable = Partial<Todo>
+type ReadTodo = Readonly<Todo>
+
+const fetchData: Promise<string> = new Promise(resolve => {
+    setTimeout(() => {
+        resolve('hello');
+    }, 3000);
+})
+fetchData.then(data => {
+    data.toUpperCase();
+})
+
+const vegetables: Array<string> = ['Tomato', 'Broccoly', 'Asparagas'];
 
