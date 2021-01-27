@@ -76,3 +76,10 @@ type MappedTypes = {
 }
 
 let tmp3: keyof Vegetables;
+
+
+type ConditionalTypes = 'tomato' extends string ? number : boolean
+type ConditionalTypesInfamer = { tomato: 'tomato'} extends { tomato: infer R} ? R : boolean
+type DistributiveConditionalTypes<T> = T extends 'tomato' ? number : boolean;
+let tmp4: DistributiveConditionalTypes<'tomato' | 'pumpkin'>
+let tmp5: NonNullable<string | null> // 内部でconditionalTypesになっている
