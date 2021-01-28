@@ -1,4 +1,21 @@
-class Score {
+interface Scorable {
+  readonly totalScore: number;
+  render(): void;
+}
+
+interface Foodable {
+    element: Element;
+    clickEventHandler(): void;
+}
+
+interface Foodsable {
+    elements: HTMLCollectionOf<Element>;
+    readonly activeElements: Element[];
+    readonly activeElementsScore: number[];
+}
+
+
+class Score implements Scorable{
   private static instance: Score;
   get totalScore() {
       const foods = Foods.getInstance();
@@ -17,9 +34,9 @@ class Score {
         Score.instance = new Score();
     }
     return Score.instance;
+  }
 }
-}
-class Food {
+class Food implements Foodable{
     constructor(public element: Element) {
         element.addEventListener('click', this.clickEventHandler.bind(this));
     }
@@ -29,7 +46,7 @@ class Food {
         score.render();
     }
  }
-class Foods {
+class Foods implements Foodsable{
     private static instance: Foods = Foods.getInstance();
     elements = document.getElementsByClassName('food');
     private _activeElements: Element[] = [];
